@@ -1258,7 +1258,7 @@ function revisarFechaSorpresa() {
         new Date(
             2026,
             8,
-            18,
+            21,
             7,
             0,
             0
