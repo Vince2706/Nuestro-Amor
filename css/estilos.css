@@ -1,0 +1,4045 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap');
+
+
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #0d0508;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+body.modal-abierto {
+    overflow: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+.oculto {
+    display: none;
+}
+
+.contenido {
+    width: 100%;
+    min-height: 100vh;
+    background: #0c0508;
+}
+
+
+/* =========================================
+   PORTADA
+========================================= */
+
+.portada {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    overflow: hidden;
+
+    padding: 60px 80px;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(159, 43, 77, 0.20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 15% 85%,
+            rgba(113, 26, 53, 0.14),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #16090e 0%,
+            #0c0508 100%
+        );
+}
+
+.luz {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(130px);
+    pointer-events: none;
+}
+
+.luz-1 {
+    width: 400px;
+    height: 400px;
+    background: rgba(171, 44, 82, 0.14);
+    top: -180px;
+    left: -120px;
+}
+
+.luz-2 {
+    width: 450px;
+    height: 450px;
+    background: rgba(138, 30, 63, 0.10);
+    right: -180px;
+    bottom: -200px;
+}
+
+.contenido-portada {
+    width: 100%;
+    max-width: 1300px;
+    position: relative;
+    z-index: 2;
+}
+
+.corazon-principal {
+    font-size: 45px;
+    color: #db557b;
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 0 25px
+        rgba(219, 85, 123, 0.30);
+
+    animation: latido 1.8s infinite;
+}
+
+.para {
+    color: #d06483;
+    font-size: 12px;
+    letter-spacing: 8px;
+    margin-bottom: 22px;
+}
+
+.portada h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(70px, 6.5vw, 110px);
+    font-weight: 500;
+    line-height: 0.92;
+    letter-spacing: -2px;
+    color: #fff8fa;
+}
+
+.portada h1 span {
+    display: block;
+    color: #dc8fa6;
+    font-style: italic;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.linea-decorativa {
+    width: 80px;
+    height: 1px;
+    margin: 38px auto 32px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #bd607b,
+            transparent
+        );
+}
+
+.mensaje-portada {
+    width: 90%;
+    max-width: 760px;
+    margin: 0 auto 40px;
+
+    color: #bba9af;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 2;
+}
+
+#btnComenzar {
+    padding: 18px 38px;
+    border-radius: 50px;
+
+    border:
+        1px solid
+        rgba(224, 117, 147, 0.35);
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #a23859,
+            #6f203a
+        );
+
+    font-size: 14px;
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 45px
+        rgba(143, 34, 67, 0.22);
+
+    transition: 0.3s;
+}
+
+#btnComenzar span {
+    margin-left: 7px;
+    color: #ffd5df;
+}
+
+#btnComenzar:hover {
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 20px 55px
+        rgba(177, 47, 86, 0.35);
+}
+
+.fecha-portada {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    color: #73535d;
+}
+
+.fecha-portada p {
+    font-size: 10px;
+    letter-spacing: 5px;
+    white-space: nowrap;
+}
+
+.fecha-portada span {
+    width: 40px;
+    height: 1px;
+
+    background:
+        rgba(143, 82, 100, 0.35);
+}
+
+
+/* =========================================
+   INICIO
+========================================= */
+
+.inicio-historia {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 70px 80px 50px;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(140, 33, 65, 0.14),
+            transparent 32%
+        ),
+        linear-gradient(
+            180deg,
+            #10070b,
+            #0c0508
+        );
+}
+
+.decoracion-superior {
+    color: #d95178;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.subtitulo {
+    color: #c05272;
+    font-size: 11px;
+    letter-spacing: 8px;
+    margin-bottom: 28px;
+}
+
+.inicio-historia h2 {
+    max-width: 1200px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(60px, 5.5vw, 90px);
+
+    font-weight: 500;
+    line-height: 0.98;
+
+    color: #fff8fa;
+}
+
+.inicio-historia h2 span {
+    display: block;
+    margin-top: 8px;
+
+    color: #dc8fa6;
+
+    font-style: italic;
+    font-weight: 400;
+}
+
+.descripcion {
+    width: 90%;
+    max-width: 760px;
+
+    margin-top: 30px;
+
+    color: #b8a0a8;
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   CONTADOR
+========================================= */
+
+.contenedor-contador {
+    width: 100%;
+    margin-top: 60px;
+}
+
+.desde {
+    font-family: 'Cormorant Garamond', serif;
+    color: #c4a7b0;
+
+    font-size: 22px;
+    font-style: italic;
+
+    margin-bottom: 25px;
+}
+
+.contador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.tiempo {
+    width: 160px;
+    height: 125px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    border:
+        1px solid
+        rgba(210, 87, 123, 0.20);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.025),
+            rgba(255,255,255,0.01)
+        );
+
+    transition: 0.3s;
+}
+
+.tiempo:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(222,105,138,0.40);
+}
+
+.tiempo span {
+    font-family: 'Cormorant Garamond', serif;
+    color: #e59bb0;
+
+    font-size: 53px;
+    line-height: 0.9;
+}
+
+.tiempo p {
+    margin-top: 12px;
+
+    color: #84616c;
+
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+.contador-mensaje {
+    margin-top: 30px;
+
+    color: #a97c8a;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 20px;
+    font-style: italic;
+}
+
+.contador-mensaje span {
+    color: #e04f79;
+    margin-left: 5px;
+}
+
+.continuar {
+    margin-top: 65px;
+
+    color: #73525c;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.continuar span {
+    display: block;
+
+    margin-top: 12px;
+
+    color: #744858;
+    font-size: 22px;
+
+    animation: bajar 1.6s infinite;
+}
+
+
+/* =========================================
+   RECUERDOS
+========================================= */
+
+.seccion-recuerdos {
+    width: 100%;
+    position: relative;
+
+    padding: 130px 6% 150px;
+
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(126,28,58,0.10),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 65%,
+            rgba(126,28,58,0.08),
+            transparent 25%
+        ),
+        #0c0508;
+}
+
+.encabezado-recuerdos {
+    max-width: 900px;
+
+    margin: 0 auto 140px;
+
+    text-align: center;
+}
+
+.mini-titulo {
+    color: #b94c6c;
+
+    font-size: 10px;
+    letter-spacing: 7px;
+
+    margin-bottom: 20px;
+}
+
+.encabezado-recuerdos h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(65px,6vw,95px);
+
+    font-weight: 500;
+
+    color: #fff8fa;
+
+    line-height: 1;
+}
+
+.introduccion-recuerdos {
+    max-width: 650px;
+
+    margin: 28px auto 0;
+
+    color: #9f878f;
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   LÍNEA DEL TIEMPO
+========================================= */
+
+.linea-tiempo {
+    width: 100%;
+    max-width: 1600px;
+
+    margin: auto;
+
+    position: relative;
+}
+
+.linea-tiempo::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 50%;
+
+    width: 1px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(197,74,109,0.45) 5%,
+            rgba(197,74,109,0.25) 95%,
+            transparent
+        );
+}
+
+.recuerdo {
+    width: 100%;
+    min-height: 650px;
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 120px 1fr;
+
+    align-items: center;
+
+    margin-bottom: 100px;
+}
+
+.punto-tiempo {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #dd6b8c;
+
+    font-size: 15px;
+
+    background: #13080c;
+
+    border:
+        1px solid
+        rgba(210,87,123,0.45);
+
+    box-shadow:
+        0 0 0 10px #0c0508,
+        0 0 30px rgba(190,58,96,0.15);
+
+    z-index: 5;
+
+    transition: 0.3s;
+}
+
+.recuerdo:hover .punto-tiempo {
+    transform:
+        translate(-50%, -50%)
+        scale(1.15);
+
+    background: #37101e;
+}
+
+
+/* =========================================
+   FOTOS
+========================================= */
+
+.foto-recuerdo {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: #13090d;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,0.45);
+
+    transition: 0.4s;
+}
+
+.foto-recuerdo:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 40px 90px
+        rgba(0,0,0,0.55);
+}
+
+.foto-recuerdo::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 70%,
+            rgba(12,5,8,0.20)
+        );
+
+    pointer-events: none;
+}
+
+.foto-recuerdo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    filter:
+        brightness(0.92)
+        saturate(0.90);
+
+    transition: 0.8s;
+}
+
+.foto-recuerdo:hover img {
+    transform: scale(1.025);
+
+    filter:
+        brightness(1)
+        saturate(1);
+}
+
+.foto-vertical {
+    width: 350px;
+    aspect-ratio: 9 / 16;
+}
+
+.foto-muy-vertical {
+    width: 315px;
+    aspect-ratio: 720 / 1600;
+}
+
+.foto-vertical-ancha {
+    width: 430px;
+    aspect-ratio: 1204 / 1600;
+}
+
+.foto-cuadrada {
+    width: 470px;
+    aspect-ratio: 1 / 1;
+}
+
+
+/* =========================================
+   TEXTO RECUERDOS
+========================================= */
+
+.texto-recuerdo {
+    max-width: 500px;
+    position: relative;
+}
+
+.numero-recuerdo {
+    display: block;
+
+    position: absolute;
+    top: -70px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 85px;
+
+    color:
+        rgba(196,74,108,0.07);
+
+    pointer-events: none;
+}
+
+.fecha-recuerdo {
+    color: #bd5674;
+
+    font-size: 10px;
+    letter-spacing: 5px;
+
+    margin-bottom: 17px;
+}
+
+.texto-recuerdo h3 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 42px;
+    font-weight: 500;
+
+    line-height: 1;
+
+    color: #f4e8eb;
+
+    margin-bottom: 20px;
+}
+
+.texto-recuerdo > p:last-child {
+    color: #9f898f;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    font-weight: 300;
+
+    white-space: pre-line;
+}
+
+
+/* =========================================
+   ALTERNAR
+========================================= */
+
+.recuerdo.izquierda .foto-recuerdo {
+    grid-column: 1;
+    justify-self: end;
+    margin-right: 55px;
+}
+
+.recuerdo.izquierda .texto-recuerdo {
+    grid-column: 3;
+    margin-left: 55px;
+    text-align: left;
+}
+
+.recuerdo.izquierda .numero-recuerdo {
+    left: -10px;
+}
+
+.recuerdo.derecha .foto-recuerdo {
+    grid-column: 3;
+    justify-self: start;
+    margin-left: 55px;
+}
+
+.recuerdo.derecha .texto-recuerdo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: end;
+    margin-right: 55px;
+    text-align: right;
+}
+
+.recuerdo.derecha .numero-recuerdo {
+    right: -10px;
+}
+
+
+/* =========================================
+   FINAL RECUERDOS
+========================================= */
+
+.final-linea {
+    text-align: center;
+    padding-top: 60px;
+}
+
+.corazon-final-linea {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #df6889;
+
+    background: #17090e;
+
+    border:
+        1px solid
+        rgba(213,88,123,0.35);
+
+    animation: latido 2s infinite;
+}
+
+.final-linea p {
+    color: #a26e7d;
+
+    font-size: 11px;
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+}
+
+.final-linea h3 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(38px,4vw,60px);
+
+    font-style: italic;
+    font-weight: 400;
+
+    color: #dca0b1;
+}
+
+
+/* =========================================
+   MÚSICA
+========================================= */
+
+.seccion-musica {
+    width: 100%;
+    min-height: 100vh;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 140px 8% 130px;
+
+    background:
+        radial-gradient(
+            circle at 20% 45%,
+            rgba(151,42,75,0.14),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #0c0508,
+            #13070c 50%,
+            #0b0507
+        );
+}
+
+.luz-musica {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+}
+
+.luz-musica-1 {
+    width: 450px;
+    height: 450px;
+    top: 25%;
+    left: -200px;
+    background: rgba(184,55,91,0.10);
+}
+
+.luz-musica-2 {
+    width: 500px;
+    height: 500px;
+    right: -220px;
+    bottom: 10%;
+    background: rgba(133,36,72,0.10);
+}
+
+.encabezado-musica {
+    position: relative;
+    z-index: 2;
+
+    max-width: 900px;
+
+    margin: 0 auto 90px;
+
+    text-align: center;
+}
+
+.encabezado-musica h2 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(65px,6vw,95px);
+
+    font-weight: 500;
+
+    color: #fff8fa;
+
+    line-height: 1;
+}
+
+.descripcion-musica {
+    max-width: 680px;
+
+    margin: 25px auto 0;
+
+    color: #9e858e;
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   REPRODUCTOR
+========================================= */
+
+.reproductor-musica {
+    width: 100%;
+    max-width: 1250px;
+    min-height: 570px;
+
+    position: relative;
+    z-index: 2;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        480px 1fr;
+
+    align-items: center;
+
+    gap: 90px;
+
+    padding: 60px 75px;
+
+    border-radius: 30px;
+
+    border:
+        1px solid
+        rgba(211,93,126,0.13);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.035),
+            rgba(255,255,255,0.012)
+        );
+
+    box-shadow:
+        0 40px 100px
+        rgba(0,0,0,0.35);
+}
+
+.lado-portada {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-portada-cancion {
+    width: 380px;
+    height: 380px;
+
+    position: relative;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 35px 70px
+        rgba(0,0,0,0.50);
+}
+
+.resplandor-portada {
+    position: absolute;
+    inset: -25px;
+
+    border-radius: 35px;
+
+    background:
+        rgba(181,53,91,0.13);
+
+    filter: blur(35px);
+
+    opacity: 0;
+
+    transition: 0.6s;
+}
+
+.contenedor-portada-cancion.reproduciendo
+.resplandor-portada {
+    opacity: 1;
+}
+
+.contenedor-portada-cancion img {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    z-index: 2;
+
+    object-fit: cover;
+
+    border-radius: 22px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+    transition: 0.5s;
+}
+
+.contenedor-portada-cancion.reproduciendo img {
+    transform: scale(1.015);
+}
+
+
+/* =========================================
+   ECUALIZADOR
+========================================= */
+
+.estado-reproduccion {
+    height: 40px;
+
+    position: absolute;
+    z-index: 5;
+
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: flex-end;
+
+    gap: 5px;
+
+    padding: 8px 13px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(10,5,7,0.72);
+}
+
+.barra-musical {
+    width: 3px;
+    height: 5px;
+
+    border-radius: 5px;
+
+    background: #ef91ac;
+}
+
+.reproduciendo .barra-1 {
+    animation: ecualizador1 0.65s infinite alternate;
+}
+
+.reproduciendo .barra-2 {
+    animation: ecualizador2 0.45s infinite alternate;
+}
+
+.reproduciendo .barra-3 {
+    animation: ecualizador3 0.75s infinite alternate;
+}
+
+.reproduciendo .barra-4 {
+    animation: ecualizador2 0.55s infinite alternate;
+}
+
+.reproduciendo .barra-5 {
+    animation: ecualizador1 0.50s infinite alternate;
+}
+
+
+/* =========================================
+   INFORMACIÓN CANCIÓN
+========================================= */
+
+.lado-reproductor {
+    width: 100%;
+    position: relative;
+}
+
+.etiqueta-cancion {
+    color: #c35374;
+
+    font-size: 9px;
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+}
+
+.lado-reproductor h3 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(55px,5vw,78px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    color: #fff8fa;
+}
+
+.artista {
+    margin-top: 13px;
+
+    color: #c47b90;
+
+    font-size: 12px;
+    letter-spacing: 8px;
+}
+
+.linea-cancion {
+    width: 60px;
+    height: 1px;
+
+    margin: 30px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #bd5c79,
+            transparent
+        );
+}
+
+.dedicatoria-cancion {
+    max-width: 560px;
+
+    color: #aa9199;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 21px;
+    font-style: italic;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CONTROLES
+========================================= */
+
+.controles-musica {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 42px;
+}
+
+.btn-reproducir {
+    width: 68px;
+    height: 68px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(235,132,161,0.40);
+
+    background:
+        linear-gradient(
+            135deg,
+            #a73959,
+            #6c2039
+        );
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-reproducir:hover {
+    transform: scale(1.08);
+}
+
+.informacion-progreso {
+    width: 100%;
+}
+
+.barra-progreso {
+    width: 100%;
+    height: 18px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.barra-progreso::before {
+    content: "";
+
+    width: 100%;
+    height: 3px;
+
+    position: absolute;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,0.10);
+}
+
+.progreso-cancion {
+    width: 0%;
+    height: 3px;
+
+    position: absolute;
+    left: 0;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #a93256,
+            #ec89a6
+        );
+}
+
+.punto-progreso {
+    width: 12px;
+    height: 12px;
+
+    position: absolute;
+    left: 0%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #f0a0b6;
+}
+
+.tiempos-cancion {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 3px;
+
+    color: #765963;
+
+    font-size: 10px;
+}
+
+.estado-cancion {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 24px;
+
+    color: #765d65;
+
+    font-size: 10px;
+}
+
+.punto-estado {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #754152;
+}
+
+.estado-cancion.activo .punto-estado {
+    background: #d96083;
+
+    box-shadow:
+        0 0 10px
+        rgba(217,96,131,0.65);
+}
+
+.frase-musical {
+    max-width: 760px;
+
+    position: relative;
+    z-index: 2;
+
+    margin: 100px auto 0;
+
+    text-align: center;
+}
+
+.frase-musical > span {
+    display: block;
+
+    height: 55px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    color:
+        rgba(205,86,121,0.35);
+
+    font-size: 90px;
+}
+
+.frase-musical p {
+    font-family: 'Cormorant Garamond', serif;
+
+    color: #b9939e;
+
+    font-size:
+        clamp(24px,2.5vw,34px);
+
+    font-style: italic;
+
+    line-height: 1.5;
+}
+
+.pequeno-corazon {
+    margin-top: 28px;
+
+    color: #bd4d6d;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   CIERRE
+========================================= */
+
+.cierre-aniversario {
+    width: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        150px 7% 0;
+
+    background:
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(156,43,78,0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 15% 65%,
+            rgba(104,26,51,0.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #0b0507,
+            #11070b 55%,
+            #090406
+        );
+}
+
+.luz-cierre {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(130px);
+
+    pointer-events: none;
+}
+
+.luz-cierre-1 {
+    width: 500px;
+    height: 500px;
+
+    top: 100px;
+    right: -250px;
+
+    background:
+        rgba(184,57,94,0.10);
+}
+
+.luz-cierre-2 {
+    width: 450px;
+    height: 450px;
+
+    bottom: 20%;
+    left: -220px;
+
+    background:
+        rgba(135,36,67,0.10);
+}
+
+.encabezado-cierre {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    margin-bottom: 100px;
+}
+
+.encabezado-cierre h2 {
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(65px,6vw,100px);
+
+    font-weight: 500;
+
+    line-height: 0.92;
+
+    color: #fff8fa;
+}
+
+.encabezado-cierre h2 span {
+    display: block;
+
+    color: #d98da3;
+
+    font-style: italic;
+
+    font-weight: 400;
+}
+
+.linea-cierre {
+    width: 70px;
+    height: 1px;
+
+    margin: 35px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #b85270,
+            transparent
+        );
+}
+
+
+/* =========================================
+   FOTO Y TEXTO FINAL
+========================================= */
+
+.contenido-cierre {
+    width: 100%;
+
+    max-width: 1250px;
+
+    position: relative;
+    z-index: 2;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        430px 1fr;
+
+    gap: 110px;
+
+    align-items: center;
+}
+
+.lado-foto-final {
+    display: flex;
+    justify-content: center;
+}
+
+.marco-foto-final {
+    width: 360px;
+
+    aspect-ratio: 9 / 16;
+
+    position: relative;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 40px 100px
+        rgba(0,0,0,0.55);
+}
+
+.brillo-foto-final {
+    position: absolute;
+
+    inset: -30px;
+
+    border-radius: 35px;
+
+    background:
+        rgba(180,55,90,0.12);
+
+    filter: blur(45px);
+}
+
+.marco-foto-final img {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+    filter:
+        brightness(0.93)
+        saturate(0.92);
+}
+
+.fecha-foto-final {
+    position: absolute;
+
+    z-index: 4;
+
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(10,4,7,0.70);
+
+    color: #d58da1;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+}
+
+.lado-texto-final {
+    max-width: 620px;
+
+    position: relative;
+}
+
+.numero-final {
+    position: absolute;
+
+    top: -100px;
+    right: 0;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 100px;
+
+    color:
+        rgba(194,67,103,0.055);
+
+    pointer-events: none;
+}
+
+.pequeno-final {
+    color: #b44b69;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 18px;
+}
+
+.lado-texto-final h3 {
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    color: #fff6f8;
+
+    font-size: 67px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    margin-bottom: 28px;
+}
+
+.texto-aniversario {
+    color: #aa9299;
+
+    font-size: 14px;
+
+    font-weight: 300;
+
+    line-height: 2;
+
+    white-space: pre-line;
+}
+
+.frase-destacada-final {
+    max-width: 500px;
+
+    margin-top: 28px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    color: #dc9caf;
+
+    font-size: 34px;
+
+    font-style: italic;
+
+    line-height: 1.2;
+}
+
+.btn-ultima-cosa {
+    margin-top: 40px;
+
+    padding: 17px 30px;
+
+    border-radius: 40px;
+
+    border:
+        1px solid
+        rgba(224,112,143,0.32);
+
+    background:
+        linear-gradient(
+            135deg,
+            #932e4c,
+            #611b32
+        );
+
+    color: #fff5f8;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 40px
+        rgba(136,31,61,0.20);
+
+    transition: 0.3s;
+}
+
+.btn-ultima-cosa span {
+    margin-left: 7px;
+
+    color: #f5afc2;
+}
+
+.btn-ultima-cosa:hover {
+    transform:
+        translateY(-4px)
+        scale(1.02);
+}
+
+
+/* =========================================
+   REVELACIÓN FINAL
+========================================= */
+
+.revelacion-final {
+    width:
+        calc(100% + 14%);
+
+    position: relative;
+
+    left: -7%;
+
+    max-height: 0;
+
+    margin-top: 140px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(156,42,77,0.17),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #090406,
+            #16080d 50%,
+            #080305
+        );
+
+    transition:
+        max-height 1.8s ease,
+        opacity 1.2s ease;
+}
+
+.revelacion-final.activa {
+    max-height: 1300px;
+    opacity: 1;
+}
+
+.contenido-revelacion {
+    min-height: 100vh;
+
+    position: relative;
+    z-index: 4;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        120px 25px;
+}
+
+.corazon-revelacion {
+    margin:
+        5px 0 30px;
+
+    color: #dc587e;
+
+    font-size: 38px;
+
+    animation:
+        latido 1.8s infinite;
+}
+
+.contenido-revelacion h2 {
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(65px,7vw,110px);
+
+    font-weight: 500;
+
+    line-height: 0.88;
+
+    color: #fff7f9;
+}
+
+.contenido-revelacion h2 span {
+    display: block;
+
+    color: #e294aa;
+
+    font-style: italic;
+
+    font-weight: 400;
+}
+
+.texto-revelacion {
+    max-width: 700px;
+
+    margin-top: 45px;
+
+    color: #a88d95;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+.una-y-otra {
+    margin-top: 30px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    color: #d99aab;
+
+    font-size: 31px;
+
+    font-style: italic;
+}
+
+.separador-revelacion {
+    width: 270px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin:
+        50px auto;
+}
+
+.separador-revelacion span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        rgba(195,77,110,0.35);
+}
+
+.separador-revelacion div {
+    color: #c85475;
+
+    font-size: 12px;
+}
+
+.contenido-revelacion h3 {
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    color: #f5e8ec;
+
+    font-size:
+        clamp(40px,4vw,60px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+}
+
+.contenido-revelacion h3 span {
+    color: #df93a8;
+
+    font-style: italic;
+}
+
+.te-amo {
+    margin-top: 25px;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    color: #df8da4;
+
+    font-size: 27px;
+
+    font-style: italic;
+}
+
+.corazones-finales {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.corazon-flotante {
+    position: absolute;
+
+    bottom: -50px;
+
+    color:
+        rgba(219,87,125,0.28);
+
+    animation:
+        subirCorazon linear forwards;
+}
+
+.contenedor-tercer-secreto {
+    width: 100%;
+
+    max-width: 800px;
+
+    height: 55px;
+
+    position: relative;
+
+    margin-top: 35px;
+}
+
+.secreto-final {
+    position: absolute !important;
+
+    right: 3%;
+    bottom: 0;
+}
+
+
+/* =========================================
+   PRÓXIMA SORPRESA
+========================================= */
+
+.proxima-sorpresa {
+    width: 100%;
+
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    padding:
+        100px 30px 120px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 36%,
+            rgba(196,155,45,0.055),
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 50% 70%,
+            rgba(79,94,44,0.035),
+            transparent 25%
+        ),
+        linear-gradient(
+            180deg,
+            #080305,
+            #090605 55%,
+            #070403
+        );
+}
+
+
+/* =========================================
+   ESCENA DE LA FLOR
+========================================= */
+
+.escena-flor {
+    width: 320px;
+    height: 390px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   AURA DORADA
+========================================= */
+
+.aura-flor {
+    width: 230px;
+    height: 230px;
+
+    position: absolute;
+
+    top: 25px;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        scale(0.5);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(226,186,73,0.14),
+            rgba(192,145,34,0.055) 40%,
+            transparent 70%
+        );
+
+    filter: blur(18px);
+
+    opacity: 0;
+}
+
+
+/* =========================================
+   FLOR COMPLETA
+========================================= */
+
+.flor-animada {
+    width: 220px;
+    height: 350px;
+
+    position: relative;
+
+    transform-origin:
+        50% 100%;
+}
+
+
+/* =========================================
+   TALLO
+========================================= */
+
+.tallo-flor {
+    width: 7px;
+    height: 220px;
+
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    z-index: 1;
+
+    transform:
+        translateX(-50%)
+        scaleY(0);
+
+    transform-origin:
+        bottom center;
+
+    border-radius:
+        8px 8px 2px 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3d542d,
+            #6f7f43 45%,
+            #42592f
+        );
+
+    box-shadow:
+        inset 1px 0 1px
+        rgba(255,255,255,0.08);
+}
+
+
+/* =========================================
+   HOJAS
+========================================= */
+
+.hoja-flor {
+    width: 72px;
+    height: 34px;
+
+    position: absolute;
+
+    z-index: 2;
+
+    bottom: 90px;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #61743e,
+            #344a2b
+        );
+}
+
+.hoja-izquierda {
+    left: 38px;
+
+    border-radius:
+        80% 5% 80% 5%;
+
+    transform:
+        rotate(25deg)
+        scale(0);
+
+    transform-origin:
+        right center;
+}
+
+.hoja-derecha {
+    right: 38px;
+
+    bottom: 130px;
+
+    border-radius:
+        5% 80% 5% 80%;
+
+    transform:
+        rotate(-25deg)
+        scale(0);
+
+    transform-origin:
+        left center;
+}
+
+
+/* =========================================
+   CABEZA DE LA FLOR
+========================================= */
+
+.cabeza-flor {
+    width: 170px;
+    height: 170px;
+
+    position: absolute;
+
+    z-index: 5;
+
+    top: 8px;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        scale(0.10);
+
+    transform-origin:
+        center center;
+
+    opacity: 0;
+}
+
+
+/* =========================================
+   PÉTALOS
+========================================= */
+
+.petalo {
+    width: 40px;
+    height: 82px;
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    border-radius:
+        50% 50% 45% 45%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f1c84e 0%,
+            #dca92f 60%,
+            #b77d1f 100%
+        );
+
+    box-shadow:
+        inset 0 5px 10px
+        rgba(255,245,170,0.10);
+
+    opacity: 0;
+
+    transform-origin:
+        50% 100%;
+}
+
+
+/* POSICIÓN DE CADA PÉTALO */
+
+.petalo-1 {
+    transform:
+        translate(-50%, -100%)
+        rotate(0deg)
+        scaleY(0.15);
+}
+
+.petalo-2 {
+    transform:
+        translate(-50%, -100%)
+        rotate(30deg)
+        scaleY(0.15);
+}
+
+.petalo-3 {
+    transform:
+        translate(-50%, -100%)
+        rotate(60deg)
+        scaleY(0.15);
+}
+
+.petalo-4 {
+    transform:
+        translate(-50%, -100%)
+        rotate(90deg)
+        scaleY(0.15);
+}
+
+.petalo-5 {
+    transform:
+        translate(-50%, -100%)
+        rotate(120deg)
+        scaleY(0.15);
+}
+
+.petalo-6 {
+    transform:
+        translate(-50%, -100%)
+        rotate(150deg)
+        scaleY(0.15);
+}
+
+.petalo-7 {
+    transform:
+        translate(-50%, -100%)
+        rotate(180deg)
+        scaleY(0.15);
+}
+
+.petalo-8 {
+    transform:
+        translate(-50%, -100%)
+        rotate(210deg)
+        scaleY(0.15);
+}
+
+.petalo-9 {
+    transform:
+        translate(-50%, -100%)
+        rotate(240deg)
+        scaleY(0.15);
+}
+
+.petalo-10 {
+    transform:
+        translate(-50%, -100%)
+        rotate(270deg)
+        scaleY(0.15);
+}
+
+.petalo-11 {
+    transform:
+        translate(-50%, -100%)
+        rotate(300deg)
+        scaleY(0.15);
+}
+
+.petalo-12 {
+    transform:
+        translate(-50%, -100%)
+        rotate(330deg)
+        scaleY(0.15);
+}
+
+
+/* =========================================
+   CENTRO DE LA FLOR
+========================================= */
+
+.centro-flor {
+    width: 68px;
+    height: 68px;
+
+    position: absolute;
+
+    z-index: 10;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 40% 35%,
+            #9b7132,
+            #67441f 45%,
+            #352413 100%
+        );
+
+    box-shadow:
+        0 0 20px
+        rgba(215,169,56,0.12);
+
+    opacity: 0;
+}
+
+.centro-flor span {
+    width: 5px;
+    height: 5px;
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        rgba(224,183,82,0.45);
+}
+
+.centro-flor span:nth-child(1) {
+    top: 18px;
+    left: 20px;
+}
+
+.centro-flor span:nth-child(2) {
+    top: 15px;
+    right: 18px;
+}
+
+.centro-flor span:nth-child(3) {
+    top: 31px;
+    left: 31px;
+}
+
+.centro-flor span:nth-child(4) {
+    bottom: 17px;
+    left: 19px;
+}
+
+.centro-flor span:nth-child(5) {
+    bottom: 16px;
+    right: 19px;
+}
+
+.centro-flor span:nth-child(6) {
+    top: 32px;
+    left: 14px;
+}
+
+.centro-flor span:nth-child(7) {
+    top: 32px;
+    right: 14px;
+}
+
+
+/* =========================================
+   PARTÍCULAS
+========================================= */
+
+.particulas-flor {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+.particula-flor {
+    position: absolute;
+
+    color:
+        rgba(226,190,85,0.50);
+
+    opacity: 0;
+}
+
+.particula-1 {
+    top: 80px;
+    left: 35px;
+}
+
+.particula-2 {
+    top: 35px;
+    right: 50px;
+
+    font-size: 24px;
+}
+
+.particula-3 {
+    top: 150px;
+    right: 20px;
+}
+
+.particula-4 {
+    top: 185px;
+    left: 25px;
+
+    font-size: 22px;
+}
+
+.particula-5 {
+    top: 55px;
+    left: 90px;
+
+    font-size: 8px;
+}
+
+
+/* =========================================
+   ANIMACIÓN AL ACTIVAR LA FLOR
+========================================= */
+
+.escena-flor.floreciendo
+.tallo-flor {
+    animation:
+        crecerTallo 1.6s
+        cubic-bezier(0.2,0.7,0.2,1)
+        forwards;
+}
+
+
+.escena-flor.floreciendo
+.hoja-izquierda {
+    animation:
+        aparecerHojaIzquierda 0.8s
+        1.15s
+        ease-out
+        forwards;
+}
+
+
+.escena-flor.floreciendo
+.hoja-derecha {
+    animation:
+        aparecerHojaDerecha 0.8s
+        1.45s
+        ease-out
+        forwards;
+}
+
+
+.escena-flor.floreciendo
+.cabeza-flor {
+    animation:
+        aparecerCabeza 0.75s
+        1.65s
+        ease-out
+        forwards;
+}
+
+
+.escena-flor.floreciendo
+.petalo {
+    animation-duration: 0.9s;
+    animation-timing-function:
+        cubic-bezier(0.2,0.8,0.3,1.2);
+    animation-fill-mode: forwards;
+}
+
+
+.escena-flor.floreciendo
+.petalo-1 {
+    animation-name: abrirPetalo1;
+    animation-delay: 2.05s;
+}
+
+.escena-flor.floreciendo
+.petalo-2 {
+    animation-name: abrirPetalo2;
+    animation-delay: 2.12s;
+}
+
+.escena-flor.floreciendo
+.petalo-3 {
+    animation-name: abrirPetalo3;
+    animation-delay: 2.19s;
+}
+
+.escena-flor.floreciendo
+.petalo-4 {
+    animation-name: abrirPetalo4;
+    animation-delay: 2.26s;
+}
+
+.escena-flor.floreciendo
+.petalo-5 {
+    animation-name: abrirPetalo5;
+    animation-delay: 2.33s;
+}
+
+.escena-flor.floreciendo
+.petalo-6 {
+    animation-name: abrirPetalo6;
+    animation-delay: 2.40s;
+}
+
+.escena-flor.floreciendo
+.petalo-7 {
+    animation-name: abrirPetalo7;
+    animation-delay: 2.47s;
+}
+
+.escena-flor.floreciendo
+.petalo-8 {
+    animation-name: abrirPetalo8;
+    animation-delay: 2.54s;
+}
+
+.escena-flor.floreciendo
+.petalo-9 {
+    animation-name: abrirPetalo9;
+    animation-delay: 2.61s;
+}
+
+.escena-flor.floreciendo
+.petalo-10 {
+    animation-name: abrirPetalo10;
+    animation-delay: 2.68s;
+}
+
+.escena-flor.floreciendo
+.petalo-11 {
+    animation-name: abrirPetalo11;
+    animation-delay: 2.75s;
+}
+
+.escena-flor.floreciendo
+.petalo-12 {
+    animation-name: abrirPetalo12;
+    animation-delay: 2.82s;
+}
+
+
+.escena-flor.floreciendo
+.centro-flor {
+    animation:
+        aparecerCentroFlor 0.7s
+        2.75s
+        ease-out
+        forwards;
+}
+
+
+.escena-flor.floreciendo
+.aura-flor {
+    animation:
+        encenderAura 1.8s
+        3s
+        ease
+        forwards;
+}
+
+
+.escena-flor.floreciendo
+.particula-flor {
+    animation:
+        aparecerParticula 3s
+        ease-in-out
+        infinite;
+}
+
+
+.escena-flor.floreciendo
+.particula-1 {
+    animation-delay: 3.2s;
+}
+
+.escena-flor.floreciendo
+.particula-2 {
+    animation-delay: 3.7s;
+}
+
+.escena-flor.floreciendo
+.particula-3 {
+    animation-delay: 4.2s;
+}
+
+.escena-flor.floreciendo
+.particula-4 {
+    animation-delay: 4.7s;
+}
+
+.escena-flor.floreciendo
+.particula-5 {
+    animation-delay: 5.1s;
+}
+
+
+/* MOVIMIENTO DESPUÉS DE FLORECER */
+
+.escena-flor.florecida
+.flor-animada {
+    animation:
+        balancearFlor 4.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================
+   TEXTO DE LA PRÓXIMA SORPRESA
+========================================= */
+
+.contenido-proxima {
+    max-width: 800px;
+
+    position: relative;
+
+    z-index: 5;
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity 1.4s ease,
+        transform 1.4s ease;
+}
+
+.contenido-proxima.visible-flor {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+.espera {
+    color: #8f7541;
+
+    font-size: 9px;
+
+    letter-spacing: 7px;
+
+    margin-bottom: 20px;
+}
+
+.contenido-proxima h2 {
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    color: #d8c8b0;
+
+    font-size:
+        clamp(40px,4.5vw,66px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+}
+
+.fecha-sorpresa {
+    margin-top: 38px;
+
+    color: #b6954f;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 27px;
+
+    letter-spacing: 8px;
+}
+
+.frase-sorpresa {
+    margin-top: 20px;
+
+    color: #7e7061;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 20px;
+
+    font-style: italic;
+}
+
+.estado-sorpresa {
+    margin-top: 40px;
+
+    color: #625a51;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.btn-sorpresa {
+    display: inline-block;
+
+    margin-top: 22px;
+
+    padding:
+        14px 26px;
+
+    border-radius: 35px;
+
+    border:
+        1px solid
+        rgba(200,165,75,0.28);
+
+    color: #d6b96d;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    transition: 0.3s;
+}
+
+.btn-sorpresa.bloqueado {
+    opacity: 0.30;
+
+    pointer-events: none;
+}
+
+.btn-sorpresa.desbloqueado {
+    opacity: 1;
+
+    cursor: pointer;
+
+    background:
+        rgba(166,127,30,0.08);
+}
+
+.btn-sorpresa.desbloqueado:hover {
+    transform: translateY(-3px);
+
+    background:
+        rgba(166,127,30,0.15);
+}
+
+
+/* =========================================
+   SECRETOS
+========================================= */
+
+.secreto-trigger {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+
+    z-index: 10;
+
+    padding: 0;
+
+    border: none;
+
+    outline: none;
+
+    background:
+        rgba(15,6,10,0.30);
+
+    color:
+        rgba(240,151,177,0.30);
+
+    border-radius: 50%;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    opacity: 0.40;
+
+    transition: 0.4s;
+}
+
+.secreto-trigger:hover {
+    opacity: 1;
+
+    color: #f19ab3;
+
+    background:
+        rgba(81,22,42,0.75);
+
+    transform: scale(1.18);
+
+    box-shadow:
+        0 0 22px
+        rgba(220,82,122,0.35);
+}
+
+.secreto-trigger:not(.descubierto) {
+    animation:
+        pistaSecreta 7s
+        ease-in-out
+        infinite;
+}
+
+.secreto-trigger.descubierto {
+    opacity: 0.85;
+
+    color: #ed89a6;
+
+    background:
+        rgba(105,32,55,0.55);
+
+    cursor: default;
+
+    animation: none;
+}
+
+.secreto-trigger.descubierto::after {
+    content: "✓";
+
+    position: absolute;
+
+    top: -5px;
+    right: -5px;
+
+    width: 13px;
+    height: 13px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #8d304c;
+
+    color: white;
+
+    font-size: 7px;
+}
+
+.secreto-playa {
+    right: 13px;
+    bottom: 13px;
+}
+
+.rincon-secreto-musica {
+    position: absolute;
+
+    right: 0;
+    bottom: -45px;
+}
+
+.secreto-duki {
+    position: relative;
+}
+
+
+/* =========================================
+   PROGRESO SECRETOS
+========================================= */
+
+.progreso-secretos {
+    position: fixed;
+
+    z-index: 90;
+
+    right: 28px;
+    bottom: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        10px 15px;
+
+    border-radius: 30px;
+
+    border:
+        1px solid
+        rgba(220,99,134,0.22);
+
+    background:
+        rgba(18,7,11,0.78);
+
+    color: #c98b9d;
+
+    backdrop-filter:
+        blur(12px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(15px)
+        scale(0.95);
+
+    transition: 0.5s;
+}
+
+.progreso-secretos.visible {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.progreso-secretos.completo {
+    border-color:
+        rgba(229,118,150,0.48);
+
+    box-shadow:
+        0 0 25px
+        rgba(203,67,106,0.16);
+}
+
+#numeroSecretos {
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 17px;
+}
+
+.corazon-progreso {
+    color: #dd5c81;
+}
+
+
+/* =========================================
+   MODAL SECRETOS
+========================================= */
+
+.modal-secreto {
+    position: fixed;
+
+    z-index: 200;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.45s;
+}
+
+.modal-secreto.abierto {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fondo-modal-secreto {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(5,2,4,0.82);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+.tarjeta-secreto {
+    width: 100%;
+
+    max-width: 570px;
+
+    position: relative;
+
+    z-index: 2;
+
+    padding:
+        55px 55px 45px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    border:
+        1px solid
+        rgba(226,107,141,0.22);
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(167,47,81,0.18),
+            transparent 42%
+        ),
+        linear-gradient(
+            145deg,
+            #17090e,
+            #0d0609
+        );
+
+    box-shadow:
+        0 40px 120px
+        rgba(0,0,0,0.65);
+
+    transform:
+        translateY(25px)
+        scale(0.96);
+
+    transition: 0.45s;
+}
+
+.modal-secreto.abierto .tarjeta-secreto {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.cerrar-secreto {
+    position: absolute;
+
+    top: 17px;
+    right: 20px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #76545e;
+
+    font-size: 26px;
+
+    cursor: pointer;
+}
+
+.icono-secreto {
+    width: 60px;
+    height: 60px;
+
+    margin:
+        0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #e96f92;
+
+    background:
+        rgba(156,43,76,0.16);
+
+    border:
+        1px solid
+        rgba(222,97,133,0.25);
+
+    animation:
+        latidoSuave 2s infinite;
+}
+
+.etiqueta-secreto {
+    color: #b74c6b;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 15px;
+}
+
+.tarjeta-secreto h2 {
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    color: #fff6f8;
+
+    font-size: 43px;
+
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+.linea-secreto {
+    width: 55px;
+    height: 1px;
+
+    margin:
+        25px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #b64b6a,
+            transparent
+        );
+}
+
+.mensaje-secreto {
+    color: #b59ba3;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size: 21px;
+
+    font-style: italic;
+
+    line-height: 1.7;
+}
+
+.contador-modal {
+    margin-top: 25px;
+
+    color: #865565;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+}
+
+.btn-continuar-secreto {
+    margin-top: 30px;
+
+    padding:
+        13px 25px;
+
+    border-radius: 30px;
+
+    border:
+        1px solid
+        rgba(216,103,135,0.28);
+
+    background:
+        rgba(137,39,67,0.20);
+
+    color: #dca1b1;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* =========================================
+   REVELAR
+========================================= */
+
+.revelar {
+    opacity: 0;
+
+    transform:
+        translateY(50px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.revelar.visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================
+   ANIMACIONES GENERALES
+========================================= */
+
+@keyframes latido {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.14);
+    }
+}
+
+
+@keyframes latidoSuave {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+
+@keyframes bajar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: translateY(8px);
+        opacity: 1;
+    }
+}
+
+
+@keyframes ecualizador1 {
+
+    from {
+        height: 5px;
+    }
+
+    to {
+        height: 20px;
+    }
+}
+
+
+@keyframes ecualizador2 {
+
+    from {
+        height: 8px;
+    }
+
+    to {
+        height: 25px;
+    }
+}
+
+
+@keyframes ecualizador3 {
+
+    from {
+        height: 5px;
+    }
+
+    to {
+        height: 17px;
+    }
+}
+
+
+@keyframes pistaSecreta {
+
+    0%,
+    72%,
+    100% {
+        opacity: 0.38;
+
+        box-shadow:
+            0 0 0
+            rgba(222,92,130,0);
+    }
+
+    80% {
+        opacity: 0.72;
+
+        box-shadow:
+            0 0 16px
+            rgba(222,92,130,0.25);
+    }
+}
+
+
+@keyframes subirCorazon {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(0.8);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(25deg)
+            scale(1.3);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   ANIMACIONES DE LA FLOR
+========================================= */
+
+@keyframes crecerTallo {
+
+    from {
+        transform:
+            translateX(-50%)
+            scaleY(0);
+    }
+
+    to {
+        transform:
+            translateX(-50%)
+            scaleY(1);
+    }
+}
+
+
+@keyframes aparecerHojaIzquierda {
+
+    from {
+        opacity: 0;
+
+        transform:
+            rotate(25deg)
+            scale(0);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            rotate(25deg)
+            scale(1);
+    }
+}
+
+
+@keyframes aparecerHojaDerecha {
+
+    from {
+        opacity: 0;
+
+        transform:
+            rotate(-25deg)
+            scale(0);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            rotate(-25deg)
+            scale(1);
+    }
+}
+
+
+@keyframes aparecerCabeza {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(0.10);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+}
+
+
+@keyframes abrirPetalo1 {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -100%)
+            rotate(0deg)
+            scaleY(1);
+    }
+}
+
+@keyframes abrirPetalo2 {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -100%)
+            rotate(30deg)
+            scaleY(1);
+    }
+}
+
+@keyframes abrirPetalo3 {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -100%)
+            rotate(60deg)
+            scaleY(1);
+    }
+}
+
+@keyframes abrirPetalo4 {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -100%)
+            rotate(90deg)
+            scaleY(1);
+    }
+}
+
+@keyframes abrirPetalo5 {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -100%)
+            rotate(120deg)
+            scaleY(1);
+    }
+}
+
+@keyframes abrirPetalo6 {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -100%)
+            rotate(150deg)
+            scaleY(1);
+    }
+}
+
+@keyframes abrirPetalo7 {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -100%)
+            rotate(180deg)
+            scaleY(1);
+    }
+}
+
+@keyframes abrirPetalo8 {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -100%)
+            rotate(210deg)
+            scaleY(1);
+    }
+}
+
+@keyframes abrirPetalo9 {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -100%)
+            rotate(240deg)
+            scaleY(1);
+    }
+}
+
+@keyframes abrirPetalo10 {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -100%)
+            rotate(270deg)
+            scaleY(1);
+    }
+}
+
+@keyframes abrirPetalo11 {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -100%)
+            rotate(300deg)
+            scaleY(1);
+    }
+}
+
+@keyframes abrirPetalo12 {
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -100%)
+            rotate(330deg)
+            scaleY(1);
+    }
+}
+
+
+@keyframes aparecerCentroFlor {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+}
+
+
+@keyframes encenderAura {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+}
+
+
+@keyframes aparecerParticula {
+
+    0%,
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(8px)
+            scale(0.7);
+    }
+
+    50% {
+        opacity: 0.65;
+
+        transform:
+            translateY(-8px)
+            scale(1);
+    }
+}
+
+
+@keyframes balancearFlor {
+
+    0%,
+    100% {
+        transform:
+            rotate(-1.3deg);
+    }
+
+    50% {
+        transform:
+            rotate(1.3deg);
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .foto-vertical {
+        width: 300px;
+    }
+
+    .foto-muy-vertical {
+        width: 275px;
+    }
+
+    .foto-vertical-ancha {
+        width: 370px;
+    }
+
+    .foto-cuadrada {
+        width: 400px;
+    }
+
+    .recuerdo.izquierda .foto-recuerdo {
+        margin-right: 35px;
+    }
+
+    .recuerdo.derecha .foto-recuerdo {
+        margin-left: 35px;
+    }
+
+    .recuerdo.izquierda .texto-recuerdo {
+        margin-left: 35px;
+    }
+
+    .recuerdo.derecha .texto-recuerdo {
+        margin-right: 35px;
+    }
+
+    .reproductor-musica {
+        grid-template-columns:
+            390px 1fr;
+
+        gap: 55px;
+
+        padding: 55px;
+    }
+
+    .contenedor-portada-cancion {
+        width: 340px;
+        height: 340px;
+    }
+
+    .contenido-cierre {
+        grid-template-columns:
+            360px 1fr;
+
+        gap: 70px;
+    }
+
+    .marco-foto-final {
+        width: 330px;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .seccion-recuerdos {
+        padding:
+            90px 25px;
+    }
+
+    .linea-tiempo::before {
+        left: 25px;
+    }
+
+    .recuerdo {
+        display: block;
+
+        min-height: auto;
+
+        margin-bottom: 120px;
+
+        padding-left: 70px;
+    }
+
+    .punto-tiempo {
+        left: 25px;
+        top: 30px;
+    }
+
+    .foto-recuerdo,
+    .foto-vertical,
+    .foto-muy-vertical,
+    .foto-vertical-ancha,
+    .foto-cuadrada,
+    .recuerdo.izquierda .foto-recuerdo,
+    .recuerdo.derecha .foto-recuerdo {
+
+        width: auto;
+
+        max-width: 100%;
+
+        margin:
+            0 auto 40px;
+    }
+
+    .foto-vertical {
+        height: 520px;
+    }
+
+    .foto-muy-vertical {
+        height: 540px;
+    }
+
+    .foto-vertical-ancha {
+        height: 500px;
+    }
+
+    .foto-cuadrada {
+        width: 100%;
+        height: auto;
+    }
+
+    .texto-recuerdo,
+    .recuerdo.izquierda .texto-recuerdo,
+    .recuerdo.derecha .texto-recuerdo {
+
+        width: 100%;
+
+        max-width: none;
+
+        margin: 0;
+
+        text-align: left;
+    }
+
+    .numero-recuerdo,
+    .recuerdo.derecha .numero-recuerdo,
+    .recuerdo.izquierda .numero-recuerdo {
+
+        left: -5px;
+        right: auto;
+    }
+
+
+    /* MÚSICA */
+
+    .seccion-musica {
+        padding:
+            100px 30px;
+    }
+
+    .reproductor-musica {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+        padding:
+            50px 35px;
+    }
+
+    .lado-reproductor {
+        max-width: 600px;
+
+        margin: auto;
+
+        text-align: center;
+    }
+
+    .linea-cancion {
+        margin:
+            30px auto;
+    }
+
+    .dedicatoria-cancion {
+        margin: auto;
+    }
+
+    .estado-cancion {
+        justify-content: center;
+    }
+
+
+    /* CIERRE */
+
+    .cierre-aniversario {
+        padding:
+            110px 30px 0;
+    }
+
+    .contenido-cierre {
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+
+        text-align: center;
+    }
+
+    .lado-texto-final {
+        margin: auto;
+    }
+
+    .numero-final {
+        right: 50%;
+
+        transform:
+            translateX(50%);
+    }
+
+    .frase-destacada-final {
+        margin:
+            28px auto 0;
+    }
+
+    .revelacion-final {
+        width:
+            calc(100% + 60px);
+
+        left: -30px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .portada {
+        padding:
+            40px 22px;
+    }
+
+    .portada h1 {
+        font-size: 49px;
+    }
+
+    .mensaje-portada {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .inicio-historia {
+        padding:
+            55px 20px;
+    }
+
+    .inicio-historia h2 {
+        font-size: 42px;
+    }
+
+    .contador {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2,120px);
+
+        gap: 12px;
+    }
+
+    .tiempo {
+        width: 120px;
+        height: 105px;
+    }
+
+    .tiempo span {
+        font-size: 42px;
+    }
+
+    .encabezado-recuerdos h2 {
+        font-size: 52px;
+    }
+
+    .foto-vertical {
+        height: 410px;
+    }
+
+    .foto-muy-vertical {
+        height: 430px;
+    }
+
+    .foto-vertical-ancha {
+        height: 390px;
+    }
+
+    .texto-recuerdo h3 {
+        font-size: 35px;
+    }
+
+
+    /* MÚSICA */
+
+    .seccion-musica {
+        padding:
+            90px 20px;
+    }
+
+    .encabezado-musica h2 {
+        font-size: 52px;
+    }
+
+    .reproductor-musica {
+        padding:
+            30px 20px;
+    }
+
+    .contenedor-portada-cancion {
+        width: 270px;
+        height: 270px;
+    }
+
+    .lado-reproductor h3 {
+        font-size: 48px;
+    }
+
+    .dedicatoria-cancion {
+        font-size: 18px;
+    }
+
+    .btn-reproducir {
+        width: 58px;
+        height: 58px;
+    }
+
+
+    /* CIERRE */
+
+    .cierre-aniversario {
+        padding:
+            90px 20px 0;
+    }
+
+    .encabezado-cierre h2 {
+        font-size: 53px;
+    }
+
+    .marco-foto-final {
+        width: 285px;
+    }
+
+    .lado-texto-final h3 {
+        font-size: 52px;
+    }
+
+    .texto-aniversario {
+        font-size: 13px;
+    }
+
+    .frase-destacada-final {
+        font-size: 29px;
+    }
+
+    .revelacion-final {
+        width:
+            calc(100% + 40px);
+
+        left: -20px;
+    }
+
+    .contenido-revelacion h2 {
+        font-size: 57px;
+    }
+
+    .contenido-revelacion {
+        padding:
+            100px 20px;
+    }
+
+
+    /* FLOR */
+
+    .proxima-sorpresa {
+        min-height: 100vh;
+
+        padding:
+            80px 20px 100px;
+    }
+
+    .escena-flor {
+        transform:
+            scale(0.82);
+
+        margin-top: -25px;
+        margin-bottom: -5px;
+    }
+
+    .contenido-proxima h2 {
+        font-size: 43px;
+    }
+
+    .fecha-sorpresa {
+        font-size: 22px;
+
+        letter-spacing: 5px;
+    }
+
+
+    /* SECRETOS */
+
+    .progreso-secretos {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .tarjeta-secreto {
+        padding:
+            50px 25px 35px;
+    }
+
+    .tarjeta-secreto h2 {
+        font-size: 37px;
+    }
+
+    .mensaje-secreto {
+        font-size: 19px;
+    }
+}
